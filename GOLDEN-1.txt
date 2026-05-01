@@ -1,0 +1,646 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>God's Word with Erv | Bible Study, Science &amp; Daily Reflections — ervbible.com</title>
+  <meta name="description" content="A personal sanctuary for Bible study, daily journal reflections, and the pursuit of absolute truth through Scripture, Science, and Mathematics — with Erv.">
+  <meta name="keywords" content="Bible study, daily journal, Scripture, theology, faith and science, Bible resources, devotional, Christian blog">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="God's Word with Erv">
+  <meta property="og:description" content="A lifelong student of Scripture, Math & Physics sharing daily reflections, Bible study notes, and resources.">
+  <meta property="og:image" content="https://placehold.co/1200x630/3d2b1f/d4af37?text=God%27s+Word+with+Erv">
+  <meta property="og:url" content="https://ervbible.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="God's Word with Erv">
+  <meta name="twitter:description" content="A lifelong student of Scripture, Math & Physics sharing daily reflections, Bible study notes, and resources.">
+  <meta name="twitter:image" content="https://placehold.co/1200x630/3d2b1f/d4af37?text=God%27s+Word+with+Erv">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%233d2b1f'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' font-family='Georgia,serif' fill='%23d4af37'%3E✝%3C/text%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --mahogany: #3d2b1f;
+      --mahogany-dark: #2a1d13;
+      --mahogany-mid: #5c3d2e;
+      --forest: #2d4a2d;
+      --forest-light: #3a5f3a;
+      --gold: #d4af37;
+      --gold-light: #e8cc6a;
+      --gold-pale: #f5e9c0;
+      --cream: #fdf6e3;
+      --parchment: #f0e6c8;
+      --text-dark: #1a1008;
+      --text-mid: #3d2b1f;
+      --text-light: #6b4c35;
+      --border: #c8a96e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--mahogany-dark);
+      border-bottom: 3px solid var(--gold);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+    .header-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 0.5rem;
+      min-height: 70px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 0.6rem;
+      text-decoration: none;
+    }
+    .logo-icon { font-size: 1.6rem; line-height: 1; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-title {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: var(--gold); font-weight: bold; letter-spacing: 0.03em;
+    }
+    .logo-sub {
+      font-size: 0.65rem; color: var(--gold-pale);
+      letter-spacing: 0.12em; text-transform: uppercase; font-style: italic;
+    }
+    nav { display: flex; align-items: center; gap: 0.25rem; flex-wrap: wrap; }
+    nav a {
+      color: var(--gold-pale); text-decoration: none; font-size: 0.85rem;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 0.4rem 0.75rem; border-radius: 3px;
+      transition: color 0.2s, background 0.2s; white-space: nowrap;
+    }
+    nav a:hover { color: var(--gold); background: rgba(212,175,55,0.1); }
+    nav a.active { color: var(--gold); border-bottom: 2px solid var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--mahogany-dark) 0%, var(--mahogany) 50%, var(--forest) 100%);
+      border-bottom: 4px double var(--gold);
+      padding: 4rem 1.5rem;
+    }
+    .hero-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+    }
+    .hero-label {
+      display: inline-block; background: var(--gold); color: var(--mahogany-dark);
+      font-size: 0.7rem; font-weight: bold; letter-spacing: 0.15em;
+      text-transform: uppercase; padding: 0.25rem 0.75rem; margin-bottom: 1rem;
+    }
+    .hero-title {
+      font-size: clamp(1.6rem, 4vw, 2.6rem); color: var(--gold-light);
+      line-height: 1.25; margin-bottom: 1rem;
+    }
+    .hero-excerpt {
+      color: var(--gold-pale); font-size: 1rem; margin-bottom: 1.5rem; font-style: italic;
+    }
+    .hero-meta {
+      font-size: 0.8rem; color: var(--border); margin-bottom: 1.5rem; letter-spacing: 0.05em;
+    }
+    .btn {
+      display: inline-block; background: var(--gold); color: var(--mahogany-dark);
+      text-decoration: none; font-size: 0.85rem; font-weight: bold;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.65rem 1.5rem; border: 2px solid var(--gold);
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn:hover { background: transparent; color: var(--gold); }
+    .hero-image {
+      border: 3px solid var(--gold); box-shadow: 8px 8px 0 rgba(212,175,55,0.2); overflow: hidden;
+    }
+    .hero-image img { width: 100%; display: block; }
+
+    /* ── SECTION TITLES ── */
+    .section-header { text-align: center; margin-bottom: 2.5rem; }
+    .section-header h2 {
+      font-size: clamp(1.4rem, 3vw, 2rem); color: var(--mahogany);
+      position: relative; display: inline-block; padding-bottom: 0.5rem;
+    }
+    .section-header h2::after {
+      content: ''; display: block; width: 60px; height: 3px;
+      background: var(--gold); margin: 0.5rem auto 0;
+    }
+    .section-header p { color: var(--text-light); font-style: italic; margin-top: 0.5rem; font-size: 0.95rem; }
+
+    /* ── MAIN LAYOUT ── */
+    .main-wrap { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; }
+
+    /* ── POSTS GRID ── */
+    .posts-section { margin-bottom: 4rem; }
+    .posts-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.75rem;
+    }
+    .post-card {
+      background: #fff; border: 1px solid var(--border); border-top: 4px solid var(--mahogany);
+      box-shadow: 3px 3px 0 rgba(61,43,31,0.08);
+      transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column;
+    }
+    .post-card:hover { transform: translateY(-3px); box-shadow: 5px 8px 0 rgba(61,43,31,0.12); }
+    .post-card img { width: 100%; height: 160px; object-fit: cover; display: block; }
+    .post-card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .post-tag {
+      display: inline-block; font-size: 0.65rem; font-weight: bold;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.2rem 0.6rem; margin-bottom: 0.6rem; border-radius: 2px;
+    }
+    .tag-scripture { background: #e8f0e8; color: var(--forest); }
+    .tag-science   { background: #e8eef5; color: #1a3a5c; }
+    .tag-journal   { background: #f5ede8; color: var(--mahogany); }
+    .tag-math      { background: #f0e8f5; color: #4a1a6b; }
+    .post-card h3 { font-size: 1.05rem; color: var(--mahogany); margin-bottom: 0.5rem; line-height: 1.35; }
+    .post-card p  { font-size: 0.875rem; color: var(--text-light); flex: 1; margin-bottom: 0.75rem; }
+    .post-card-footer {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.75rem; color: var(--text-light);
+      border-top: 1px solid var(--parchment); padding-top: 0.75rem; margin-top: auto;
+    }
+    .post-card-footer a { color: var(--mahogany); text-decoration: none; font-weight: bold; }
+    .post-card-footer a:hover { color: var(--gold); }
+
+    /* ── RESOURCES SECTION ── */
+    .resources-section { margin-bottom: 4rem; }
+    .resources-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .tab-btn {
+      background: var(--parchment); border: 2px solid var(--border); color: var(--mahogany);
+      font-family: Georgia, serif; font-size: 0.8rem; font-weight: bold;
+      letter-spacing: 0.06em; text-transform: uppercase; padding: 0.5rem 1.1rem;
+      cursor: pointer; transition: background 0.2s, color 0.2s;
+    }
+    .tab-btn.active, .tab-btn:hover { background: var(--mahogany); color: var(--gold); border-color: var(--mahogany); }
+    .resource-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem;
+    }
+    .resource-card {
+      background: var(--parchment); border: 1px solid var(--border); border-left: 5px solid var(--gold);
+      padding: 1.1rem 1.25rem; display: flex; flex-direction: column; gap: 0.4rem;
+    }
+    .resource-card .r-icon { font-size: 1.4rem; }
+    .resource-card h4 { font-size: 0.95rem; color: var(--mahogany); line-height: 1.3; }
+    .resource-card p  { font-size: 0.8rem; color: var(--text-light); font-style: italic; }
+    .resource-card a  {
+      font-size: 0.78rem; color: var(--forest); text-decoration: none; font-weight: bold;
+      margin-top: auto; padding-top: 0.4rem;
+    }
+    .resource-card a:hover { color: var(--gold); }
+    .resource-card .r-badge {
+      font-size: 0.65rem; font-weight: bold; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-light);
+    }
+
+    /* ── SIDEBAR / AUTHOR ── */
+    .bottom-section { display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; margin-bottom: 4rem; }
+    .author-card {
+      background: var(--mahogany-dark); border: 2px solid var(--gold);
+      padding: 2rem; display: flex; gap: 1.5rem; align-items: flex-start;
+    }
+    .author-avatar {
+      width: 90px; height: 90px; border-radius: 50%; border: 3px solid var(--gold);
+      object-fit: cover; flex-shrink: 0;
+    }
+    .author-info h3 { color: var(--gold); font-size: 1.1rem; margin-bottom: 0.25rem; }
+    .author-info .author-title {
+      color: var(--gold-pale); font-size: 0.75rem; letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 0.75rem; font-style: italic;
+    }
+    .author-info p { color: var(--gold-pale); font-size: 0.875rem; line-height: 1.65; }
+    .sidebar-widgets { display: flex; flex-direction: column; gap: 1.5rem; }
+    .widget {
+      background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--mahogany); padding: 1.25rem;
+    }
+    .widget h4 {
+      font-size: 0.8rem; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--mahogany); margin-bottom: 1rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--parchment);
+    }
+    .verse-of-day { font-style: italic; color: var(--text-mid); font-size: 0.9rem; line-height: 1.7; }
+    .verse-ref { font-size: 0.8rem; color: var(--gold); font-weight: bold; margin-top: 0.5rem; display: block; }
+    .newsletter-form { display: flex; flex-direction: column; gap: 0.6rem; }
+    .newsletter-form input {
+      padding: 0.55rem 0.75rem; border: 1px solid var(--border);
+      font-family: Georgia, serif; font-size: 0.85rem; background: var(--cream);
+    }
+    .newsletter-form button {
+      background: var(--mahogany); color: var(--gold); border: none;
+      font-family: Georgia, serif; font-size: 0.8rem; font-weight: bold;
+      letter-spacing: 0.08em; text-transform: uppercase; padding: 0.6rem;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .newsletter-form button:hover { background: var(--forest); }
+    .categories-list { list-style: none; }
+    .categories-list li {
+      display: flex; justify-content: space-between; padding: 0.4rem 0;
+      border-bottom: 1px solid var(--parchment); font-size: 0.875rem; color: var(--text-mid);
+    }
+    .categories-list li span { color: var(--text-light); font-size: 0.8rem; }
+
+    /* ── DIVIDER ── */
+    .ornament {
+      text-align: center; color: var(--gold); font-size: 1.2rem;
+      letter-spacing: 0.5rem; margin: 2rem 0; opacity: 0.6;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--mahogany-dark); border-top: 4px double var(--gold); padding: 2.5rem 1.5rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem;
+    }
+    .footer-brand .logo-title { font-size: 1.1rem; color: var(--gold); }
+    .footer-brand p { color: var(--gold-pale); font-size: 0.85rem; margin-top: 0.75rem; line-height: 1.6; font-style: italic; }
+    .footer-col h5 { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.4rem; }
+    .footer-col ul li a { color: var(--gold-pale); text-decoration: none; font-size: 0.85rem; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1100px; margin: 0 auto; border-top: 1px solid var(--mahogany-mid);
+      padding-top: 1rem; display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 0.5rem;
+    }
+    .footer-bottom p { color: var(--text-light); font-size: 0.78rem; }
+    .footer-bottom nav a { color: var(--text-light); font-size: 0.78rem; margin-left: 1rem; text-decoration: none; }
+    .footer-bottom nav a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-image { display: none; }
+      .bottom-section { grid-template-columns: 1fr; }
+      .author-card { flex-direction: column; align-items: center; text-align: center; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 500px) {
+      .posts-grid { grid-template-columns: 1fr; }
+      .resource-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "God's Word with Erv",
+    "description": "A personal sanctuary for Bible study, daily journal reflections, and the pursuit of absolute truth through Scripture, Science, and Mathematics.",
+    "url": "https://ervbible.com",
+    "author": {
+      "@type": "Person",
+      "name": "Erv"
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "In the Beginning Was the Word — and the Equation",
+        "datePublished": "2025-01-15",
+        "description": "Exploring the stunning parallels between John 1:1 and the mathematical foundations of the universe."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Psalm 19: The Heavens Declare — A Physicist's Reading",
+        "datePublished": "2025-01-10",
+        "description": "What does it mean that creation speaks? A study through the lens of physics and cosmology."
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">✝</span>
+        <span class="logo-text">
+          <span class="logo-title">God's Word with Erv</span>
+          <span class="logo-sub">Scripture · Science · Truth</span>
+        </span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="#journal">Journal</a>
+        <a href="library.html">Library</a>
+        <a href="#resources">Resources</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO / FEATURED POST -->
+  <section class="hero" aria-label="Featured post">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-label">✦ Featured Study</span>
+        <h1 class="hero-title">In the Beginning Was the Word — and the Equation</h1>
+        <p class="hero-excerpt">"In the beginning was the Word…" — John 1:1. What if the Logos of Scripture and the mathematical logos of physics are pointing to the same Author? A deep dive into the stunning parallels between divine revelation and the language of the universe.</p>
+        <p class="hero-meta">January 15, 2025 &nbsp;·&nbsp; Scripture &amp; Science &nbsp;·&nbsp; 8 min read</p>
+        <a href="https://study-insight-prayer.deploypad.app/" target="_blank" rel="noopener" class="btn">Read the Study →</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://placehold.co/540x360/2a1d13/d4af37?text=John+1%3A1" alt="Featured study illustration">
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-wrap">
+
+    <!-- JOURNAL / RECENT POSTS -->
+    <section class="posts-section" id="journal" aria-label="Recent journal entries and study notes">
+      <div class="section-header">
+        <h2>Daily Journal &amp; Study Notes</h2>
+        <p>Reflections from the daily walk — Scripture, Science, and the pursuit of Truth</p>
+      </div>
+
+      <div class="posts-grid">
+
+        <article class="post-card">
+          <img src="https://placehold.co/400x160/2d4a2d/f5e9c0?text=Psalm+19" alt="Psalm 19 study">
+          <div class="post-card-body">
+            <span class="post-tag tag-scripture">Scripture</span>
+            <h3>Psalm 19: The Heavens Declare — A Physicist's Reading</h3>
+            <p>What does it mean that creation "speaks"? Exploring the cosmic testimony of Psalm 19 through the lens of modern physics and cosmology.</p>
+            <div class="post-card-footer">
+              <span>Jan 10, 2025</span>
+              <a href="post-psalm-19.html">Read More →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <img src="https://placehold.co/400x160/1a3a5c/f5e9c0?text=Math+%26+Truth" alt="Math and Truth">
+          <div class="post-card-body">
+            <span class="post-tag tag-math">Mathematics</span>
+            <h3>Absolute Truth in Numbers: Why 2+2=4 Points to God</h3>
+            <p>Mathematical truth is discovered, not invented. A reflection on how the unreasonable effectiveness of mathematics reveals a rational Creator.</p>
+            <div class="post-card-footer">
+              <span>Jan 8, 2025</span>
+              <a href="post-math-truth.html">Read More →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <img src="https://placehold.co/400x160/3d2b1f/f5e9c0?text=Daily+Journal" alt="Daily journal">
+          <div class="post-card-body">
+            <span class="post-tag tag-journal">Journal</span>
+            <h3>Morning Reflection: Proverbs 3:5–6 and the Limits of Human Reason</h3>
+            <p>Today's quiet time brought me back to a familiar verse with fresh eyes. Trusting God above our own understanding — even in science.</p>
+            <div class="post-card-footer">
+              <span>Jan 6, 2025</span>
+              <a href="post-proverbs-3.html">Read More →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <img src="https://placehold.co/400x160/2d4a2d/f5e9c0?text=Romans+1" alt="Romans 1 study">
+          <div class="post-card-body">
+            <span class="post-tag tag-scripture">Scripture</span>
+            <h3>Romans 1:20 — General Revelation and the Fine-Tuned Universe</h3>
+            <p>Paul writes that God's invisible qualities are "clearly seen" in creation. The anthropic principle and fine-tuning constants make this case powerfully.</p>
+            <div class="post-card-footer">
+              <span>Jan 3, 2025</span>
+              <a href="post-romans-1.html">Read More →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <img src="https://placehold.co/400x160/1a3a5c/f5e9c0?text=Physics+%26+Faith" alt="Physics and Faith">
+          <div class="post-card-body">
+            <span class="post-tag tag-science">Science</span>
+            <h3>Quantum Mechanics and the Mystery of Consciousness</h3>
+            <p>The observer problem in quantum physics raises profound questions about the nature of mind and reality — questions Scripture has long addressed.</p>
+            <div class="post-card-footer">
+              <span>Dec 28, 2024</span>
+              <a href="post-quantum.html">Read More →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="post-card">
+          <img src="https://placehold.co/400x160/3d2b1f/f5e9c0?text=Genesis+1" alt="Genesis 1 study">
+          <div class="post-card-body">
+            <span class="post-tag tag-scripture">Scripture</span>
+            <h3>Genesis 1 and the Big Bang: Conflict or Convergence?</h3>
+            <p>A careful exegetical and scientific look at the creation narrative. Does modern cosmology contradict or confirm the biblical account?</p>
+            <div class="post-card-footer">
+              <span>Dec 22, 2024</span>
+              <a href="post-genesis-bigbang.html">Read More →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <div class="ornament">✦ ✝ ✦</div>
+
+    <!-- RESOURCES SECTION -->
+    <section class="resources-section" id="resources" aria-label="Bible and study resources">
+      <div class="section-header">
+        <h2>My Study Resources</h2>
+        <p>The tools, texts, and technologies I use in my daily pursuit of truth</p>
+      </div>
+
+      <div class="resources-tabs" role="tablist">
+        <button class="tab-btn active" onclick="showTab('physical')">📚 Physical Library</button>
+        <button class="tab-btn" onclick="showTab('online')">🌐 Online Resources</button>
+        <button class="tab-btn" onclick="showTab('ai')">🤖 AI Tools</button>
+      </div>
+
+      <div id="tab-physical" class="resource-grid">
+        <div class="resource-card">
+          <span class="r-icon">📖</span>
+          <span class="r-badge">Bible</span>
+          <h4>Primary Study Bible</h4>
+          <p>My main annotated Bible for daily reading and study</p>
+        </div>
+        <div class="resource-card">
+          <span class="r-icon">📚</span>
+          <span class="r-badge">Commentary</span>
+          <h4>Bible Commentary Collection</h4>
+          <p>Verse-by-verse commentaries for deep exegetical study</p>
+        </div>
+        <div class="resource-card">
+          <span class="r-icon">📘</span>
+          <span class="r-badge">Reference</span>
+          <h4>Concordance &amp; Lexicon</h4>
+          <p>Hebrew and Greek word study tools for original language research</p>
+        </div>
+        <div class="resource-card">
+          <span class="r-icon">📓</span>
+          <span class="r-badge">Devotional</span>
+          <h4>Devotional &amp; Journal Books</h4>
+          <p>Daily devotionals and guided journaling resources</p>
+        </div>
+        <div class="resource-card">
+          <span class="r-icon">📚</span>
+          <span class="r-badge">Full Library</span>
+          <h4>My Personal Library</h4>
+          <p>Browse the complete catalog of every book in my physical collection</p>
+          <a href="library.html">Browse the Library →</a>
+        </div>
+        <div class="resource-card">
+          <span class="r-icon">🔬</span>
+          <span class="r-badge">Science &amp; Faith</span>
+          <h4>Science &amp; Theology Library</h4>
+          <p>Books exploring the intersection of faith, physics, and mathematics</p>
+        </div>
+        <div class="resource-card">
+          <span class="r-icon">📐</span>
+          <span class="r-badge">Mathematics</span>
+          <h4>Math &amp; Physics Texts</h4>
+          <p>Reference texts for the study of God's mathematical creation</p>
+        </div>
+      </div>
+
+      <div id="tab-online" class="resource-grid" style="display:none">
+        <div class="resource-card">
+          <span class="r-icon">🔵</span>
+          <span class="r-badge">Online Bible Tool</span>
+          <h4>Blue Letter Bible</h4>
+          <p>Deep lexical study, Strong's concordance, commentaries, and original language tools</p>
+          <a href="https://www.blueletterbible.org/" target="_blank" rel="noopener">Visit Blue Letter Bible ↗</a>
+        </div>
+        <div class="resource-card">
+          <span class="r-icon">📱</span>
+          <span class="r-badge">Bible App</span>
+          <h4>YouVersion Bible</h4>
+          <p>Reading plans, devotionals, audio Bible, and community notes across hundreds of translations</p>
+          <a href="https://www.bible.com/" target="_blank" rel="noopener">Visit Bible.com ↗</a>
+        </div>
+        <div class="resource-card">
+          <span class="r-icon">🌐</span>
+          <span class="r-badge">Bible Gateway</span>
+          <h4>Bible Gateway</h4>
+          <p>Search and compare hundreds of Bible translations, read commentaries, and access study tools</p>
+          <a href="https://www.biblegateway.com/" target="_blank" rel="noopener">Visit Bible Gateway ↗</a>
+        </div>
+      </div>
+
+      <div id="tab-ai" class="resource-grid" style="display:none">
+        <div class="resource-card">
+          <span class="r-icon">🤖</span>
+          <span class="r-badge">AI Notebook</span>
+          <h4>Google NotebookLM</h4>
+          <p>My personal AI-powered Bible study notebook — upload sources, ask questions, and generate study guides grounded in my own materials</p>
+          <a href="https://notebooklm.google.com/" target="_blank" rel="noopener">Visit NotebookLM ↗</a>
+        </div>
+        <div class="resource-card">
+          <span class="r-icon">💬</span>
+          <span class="r-badge">AI Assistant</span>
+          <h4>AI-Assisted Study</h4>
+          <p>Using large language models to explore theological questions, cross-reference passages, and deepen understanding of Scripture and science</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="ornament">✦ ✝ ✦</div>
+
+    <!-- AUTHOR + SIDEBAR -->
+    <section class="bottom-section" id="about" aria-label="About the author">
+      <div class="author-card">
+        <img src="https://placehold.co/90x90/d4af37/3d2b1f?text=Erv" alt="Erv - Author" class="author-avatar">
+        <div class="author-info">
+          <h3>About Erv</h3>
+          <p class="author-title">Student of Scripture · Math · Physics</p>
+          <p>I'm Erv, a lover of truth and the ocean (but that is another subject). I believe all truth is God's truth — and there is no other truth. This means I love the Bible because it contains absolute truth. But I also love Science and Math because they too contain absolute truth. I am a lifelong student of the Bible, Math, and Physics, and I share my daily walk through each of them here — my notes, resources, and reflections.</p>
+        </div>
+      </div>
+
+      <aside class="sidebar-widgets" aria-label="Sidebar widgets">
+        <div class="widget">
+          <h4>✦ Verse of the Day</h4>
+          <p class="verse-of-day">"The heavens declare the glory of God; the skies proclaim the work of his hands."</p>
+          <span class="verse-ref">— Psalm 19:1 (NIV)</span>
+        </div>
+
+        <div class="widget">
+          <h4>✦ Categories</h4>
+          <ul class="categories-list">
+            <li>Scripture Studies <span>12</span></li>
+            <li>Daily Journal <span>28</span></li>
+            <li>Faith &amp; Science <span>7</span></li>
+            <li>Mathematics <span>5</span></li>
+            <li>Physics &amp; Cosmology <span>4</span></li>
+            <li>Resources &amp; Tools <span>3</span></li>
+          </ul>
+        </div>
+
+        <div class="widget">
+          <h4>✦ Stay Connected</h4>
+          <div class="newsletter-form">
+            <input type="text" placeholder="Your name" aria-label="Your name">
+            <input type="email" placeholder="Your email address" aria-label="Email address">
+            <button type="button">Subscribe to Updates</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo-title">✝ God's Word with Erv</div>
+        <p>"All truth is God's truth — wherever it is found." Sharing the daily walk through Scripture, Science, and Mathematics.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigate</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#journal">Journal</a></li>
+          <li><a href="library.html">Library</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="https://www.blueletterbible.org/" target="_blank" rel="noopener">Blue Letter Bible</a></li>
+          <li><a href="https://www.bible.com/" target="_blank" rel="noopener">YouVersion</a></li>
+          <li><a href="https://www.biblegateway.com/" target="_blank" rel="noopener">Bible Gateway</a></li>
+          <li><a href="https://notebooklm.google.com/" target="_blank" rel="noopener">NotebookLM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 God's Word with Erv · ervbible.com. All rights reserved.</p>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#resources">Resources</a>
+        <a href="library.html">Library</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Erv",
+    "url": "https://ervbible.com",
+    "description": "Lifelong student of the Bible, Math, and Physics. Sharing daily reflections on Scripture, Science, and absolute truth."
+  }
+  </script>
+
+</body>
+</html>
