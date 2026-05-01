@@ -303,7 +303,7 @@
       {
         "@type": "BlogPosting",
         "headline": "In the Beginning Was the Word — and the Equation",
-        "datePublished": "2025-01-15",
+        "datePublished": "2025-01-16",
         "description": "Exploring the stunning parallels between John 1:1 and the mathematical foundations of the universe."
       },
       {
