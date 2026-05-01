@@ -1,0 +1,852 @@
+
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Library | God's Word with Erv — ervbible.com</title>
+  <meta name="description" content="Erv's complete personal Bible study library — every volume organized by series, commentary, devotional, and more.">
+  <meta name="keywords" content="Bible library, Bible commentaries, Be Series, Interpreter's Bible, BSF, devotional books, Christian books">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%233d2b1f'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' font-family='Georgia,serif' fill='%23d4af37'%3E✝%3C/text%3E%3C/svg%3E">
+  <meta property="og:image" content="https://placehold.co/1200x630">
+  <meta name="twitter:image" content="https://placehold.co/1200x630">
+  <style>
+    :root {
+      --mahogany:#3d2b1f;--mahogany-dark:#2a1d13;--mahogany-mid:#5c3d2e;
+      --forest:#2d4a2d;--gold:#d4af37;--gold-light:#e8cc6a;--gold-pale:#f5e9c0;
+      --cream:#fdf6e3;--parchment:#f0e6c8;--text-dark:#1a1008;--text-mid:#3d2b1f;
+      --text-light:#6b4c35;--border:#c8a96e;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Georgia,'Times New Roman',serif;background:var(--cream);color:var(--text-dark);line-height:1.7}
+    header{position:sticky;top:0;z-index:100;background:var(--mahogany-dark);border-bottom:3px solid var(--gold);box-shadow:0 2px 12px rgba(0,0,0,.4)}
+    .header-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;min-height:70px}
+    .logo{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+    .logo-icon{font-size:1.6rem;line-height:1}
+    .logo-text{display:flex;flex-direction:column;line-height:1.1}
+    .logo-title{font-size:clamp(1rem,2.5vw,1.25rem);color:var(--gold);font-weight:bold;letter-spacing:.03em}
+    .logo-sub{font-size:.65rem;color:var(--gold-pale);letter-spacing:.12em;text-transform:uppercase;font-style:italic}
+    nav{display:flex;align-items:center;gap:.25rem;flex-wrap:wrap}
+    nav a{color:var(--gold-pale);text-decoration:none;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;padding:.4rem .75rem;border-radius:3px;transition:color .2s,background .2s;white-space:nowrap}
+    nav a:hover{color:var(--gold);background:rgba(212,175,55,.1)}
+    nav a.active{color:var(--gold);border-bottom:2px solid var(--gold)}
+    .page-hero{background:linear-gradient(135deg,var(--mahogany-dark) 0%,var(--mahogany) 60%,var(--forest) 100%);border-bottom:4px double var(--gold);padding:3rem 1.5rem}
+    .page-hero-inner{max-width:1100px;margin:0 auto;text-align:center}
+    .hero-label{display:inline-block;background:var(--gold);color:var(--mahogany-dark);font-size:.7rem;font-weight:bold;letter-spacing:.15em;text-transform:uppercase;padding:.25rem .75rem;margin-bottom:1rem}
+    .page-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--gold-light);line-height:1.2;margin-bottom:.75rem}
+    .page-hero p{color:var(--gold-pale);font-size:1rem;font-style:italic;max-width:600px;margin:0 auto}
+    .main-wrap{max-width:1100px;margin:0 auto;padding:3rem 1.5rem}
+    .section-header{text-align:center;margin-bottom:2.5rem}
+    .section-header h2{font-size:clamp(1.4rem,3vw,2rem);color:var(--mahogany);display:inline-block;padding-bottom:.5rem}
+    .section-header h2::after{content:'';display:block;width:60px;height:3px;background:var(--gold);margin:.5rem auto 0}
+    .section-header p{color:var(--text-light);font-style:italic;margin-top:.5rem;font-size:.95rem}
+    .ornament{text-align:center;color:var(--gold);font-size:1.2rem;letter-spacing:.5rem;margin:2rem 0;opacity:.6}
+    .lib-tabs{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}
+    .tab-btn{background:var(--parchment);border:2px solid var(--border);color:var(--mahogany);font-family:Georgia,serif;font-size:.78rem;font-weight:bold;letter-spacing:.05em;text-transform:uppercase;padding:.5rem 1rem;cursor:pointer;transition:background .2s,color .2s}
+    .tab-btn.active,.tab-btn:hover{background:var(--mahogany);color:var(--gold);border-color:var(--mahogany)}
+    .tab-panel{display:none}
+    .tab-panel.active{display:block}
+    .book-category{margin-bottom:2rem}
+    .book-cat-title{font-size:.78rem;font-weight:bold;letter-spacing:.12em;text-transform:uppercase;color:var(--mahogany);border-bottom:2px solid var(--gold);padding-bottom:.4rem;margin-bottom:1rem}
+    .book-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.65rem}
+    .book-card{background:var(--parchment);border:1px solid var(--border);border-left:4px solid var(--gold);padding:.65rem .9rem;display:flex;align-items:flex-start;gap:.5rem}
+    .book-card .bi{font-size:1rem;flex-shrink:0;margin-top:.1rem}
+    .book-card .bt{font-size:.8rem;color:var(--mahogany);line-height:1.3;font-weight:bold}
+    .book-card .bs{font-size:.7rem;color:var(--text-light);font-style:italic;margin-top:.1rem}
+    .series-card{background:var(--mahogany-dark);border:2px solid var(--gold);padding:1.25rem 1.5rem;margin-bottom:1.5rem;display:flex;gap:1.5rem;align-items:flex-start}
+    .series-card .si{font-size:2.2rem;flex-shrink:0}
+    .series-card h4{color:var(--gold);font-size:1rem;margin-bottom:.3rem}
+    .series-card p{color:var(--gold-pale);font-size:.82rem;line-height:1.6}
+    .vol-wrap{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem}
+    .vol-tag{background:rgba(212,175,55,.15);border:1px solid var(--gold);color:var(--gold-light);font-size:.67rem;padding:.18rem .45rem;letter-spacing:.04em}
+    footer{background:var(--mahogany-dark);border-top:4px double var(--gold);padding:2.5rem 1.5rem 1.5rem}
+    .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
+    .footer-brand .logo-title{font-size:1.1rem;color:var(--gold)}
+    .footer-brand p{color:var(--gold-pale);font-size:.85rem;margin-top:.75rem;line-height:1.6;font-style:italic}
+    .footer-col h5{color:var(--gold);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem}
+    .footer-col ul{list-style:none}
+    .footer-col ul li{margin-bottom:.4rem}
+    .footer-col ul li a{color:var(--gold-pale);text-decoration:none;font-size:.85rem}
+    .footer-col ul li a:hover{color:var(--gold)}
+    .footer-bottom{max-width:1100px;margin:0 auto;border-top:1px solid var(--mahogany-mid);padding-top:1rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+    .footer-bottom p{color:var(--text-light);font-size:.78rem}
+    .footer-bottom nav a{color:var(--text-light);font-size:.78rem;margin-left:1rem;text-decoration:none}
+    .footer-bottom nav a:hover{color:var(--gold)}
+    @media(max-width:768px){
+      .footer-inner{grid-template-columns:1fr}
+      .series-card{flex-direction:column}
+    }
+    @media(max-width:500px){
+      .book-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">✝</span>
+      <span class="logo-text">
+        <span class="logo-title">God's Word with Erv</span>
+        <span class="logo-sub">Scripture · Science · Truth</span>
+      </span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#journal">Journal</a>
+      <a href="library.html" class="active">Library</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="index.html#about">About</a>
+    </nav>
+</div></header>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="hero-label">✦ Personal Collection</span>
+    <h1>My Personal Library</h1>
+    <p>Every volume in my physical collection — organized for study and reference. A lifetime of gathering tools for understanding God's Word.</p>
+  </div>
+</section>
+
+<main class="main-wrap">
+
+  <div class="section-header">
+    <h2>Complete Book Catalog</h2>
+    <p>Browse by series, category, or subject</p>
+  </div>
+
+  <div class="lib-tabs" role="tablist">
+    <button class="tab-btn active" onclick="showLib('interpreters')">📚 Interpreter's Bible</button>
+    <button class="tab-btn" onclick="showLib('be-series')">✝ Be Series</button>
+    <button class="tab-btn" onclick="showLib('bsf')">📋 BSF</button>
+    <button class="tab-btn" onclick="showLib('bibles')">📖 Bibles</button>
+    <button class="tab-btn" onclick="showLib('commentaries')">🔵 Commentaries</button>
+    <button class="tab-btn" onclick="showLib('devotional')">🕊 Devotional</button>
+    <button class="tab-btn" onclick="showLib('books-af')">📗 Books A–F</button>
+    <button class="tab-btn" onclick="showLib('books-gl')">📘 Books G–L</button>
+    <button class="tab-btn" onclick="showLib('books-mr')">📘 Books M–R</button>
+    <button class="tab-btn" onclick="showLib('books-mr2')">🔬 Science &amp; Math</button>
+    <button class="tab-btn" onclick="showLib('books-sz')">📘 Books S–Z</button>
+
+  </div>
+
+  <!-- INTERPRETER'S BIBLE -->
+  <div id="lib-interpreters" class="tab-panel active">
+    <div class="series-card">
+      <span class="si">📚</span>
+      <div>
+        <h4>The Interpreter's Bible — Complete 12-Volume Set</h4>
+        <p>The landmark multi-volume commentary covering the entire canon of Scripture. A cornerstone of serious biblical scholarship with exegesis and exposition side by side.</p>
+        <div class="vol-wrap">
+          <span class="vol-tag">Vol 1 · Gen–Ex</span>
+          <span class="vol-tag">Vol 2 · Lev–Sam</span>
+          <span class="vol-tag">Vol 3 · Ki–Job</span>
+          <span class="vol-tag">Vol 4 · Ps–Prov</span>
+          <span class="vol-tag">Vol 5 · Ecc–Jer</span>
+          <span class="vol-tag">Vol 6 · Lam–Mal</span>
+          <span class="vol-tag">Vol 7 · Mat–Mar</span>
+          <span class="vol-tag">Vol 8 · Luke–John</span>
+          <span class="vol-tag">Vol 9 · Acts–Romans</span>
+          <span class="vol-tag">Vol 10 · Cor–Eph</span>
+          <span class="vol-tag">Vol 11 · Phil–Heb</span>
+          <span class="vol-tag">Vol 12 · James–Rev</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BE SERIES -->
+  <div id="lib-be-series" class="tab-panel">
+    <div class="series-card">
+      <span class="si">✝</span>
+      <div>
+        <h4>The "Be" Series — Warren W. Wiersbe (Complete Collection)</h4>
+        <p>Wiersbe's beloved expository commentary series covering the entire New Testament and much of the Old Testament. Each volume is a masterclass in practical, devotional Bible exposition.</p>
+        <div class="vol-wrap">
+          <span class="vol-tag">Be Alert</span><span class="vol-tag">Be Alive</span><span class="vol-tag">Be Amazed</span>
+          <span class="vol-tag">Be Authentic</span><span class="vol-tag">Be Available</span><span class="vol-tag">Be Basic</span>
+          <span class="vol-tag">Be Comforted</span><span class="vol-tag">Be Committed</span><span class="vol-tag">Be Compassionate</span>
+          <span class="vol-tag">Be Complete</span><span class="vol-tag">Be Concerned</span><span class="vol-tag">Be Confident</span>
+          <span class="vol-tag">Be Counted</span><span class="vol-tag">Be Courageous</span><span class="vol-tag">Be Daring</span>
+          <span class="vol-tag">Be Decisive</span><span class="vol-tag">Be Delivered</span><span class="vol-tag">Be Determined</span>
+          <span class="vol-tag">Be Diligent</span><span class="vol-tag">Be Distinct</span><span class="vol-tag">Be Dynamic</span>
+          <span class="vol-tag">Be Encouraged</span><span class="vol-tag">Be Equipped</span><span class="vol-tag">Be Exultant</span>
+          <span class="vol-tag">Be Faithful</span><span class="vol-tag">Be Free</span><span class="vol-tag">Be Heroic</span>
+          <span class="vol-tag">Be Holy</span><span class="vol-tag">Be Hopeful</span><span class="vol-tag">Be Joyful</span>
+          <span class="vol-tag">Be Loyal</span><span class="vol-tag">Be Mature</span><span class="vol-tag">Be Obedient</span>
+          <span class="vol-tag">Be Patient</span><span class="vol-tag">Be Quoted</span><span class="vol-tag">Be Ready</span>
+          <span class="vol-tag">Be Real</span><span class="vol-tag">Be Resolute</span><span class="vol-tag">Be Responsible</span>
+          <span class="vol-tag">Be Restored</span><span class="vol-tag">Be Reverent</span><span class="vol-tag">Be Rich</span>
+          <span class="vol-tag">Be Right</span><span class="vol-tag">Be Satisfied</span><span class="vol-tag">Be Skillful</span>
+          <span class="vol-tag">Be Strong</span><span class="vol-tag">Be Successful</span><span class="vol-tag">Be Transformed</span>
+          <span class="vol-tag">Be Victorious</span><span class="vol-tag">Be Wise</span><span class="vol-tag">Be Worshipful</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BSF -->
+  <div id="lib-bsf" class="tab-panel">
+    <div class="book-category">
+      <div class="book-cat-title">📋 Bible Study Fellowship (BSF) Study Materials</div>
+      <div class="book-grid">
+        <div class="book-card"><span class="bi">📋</span><div><div class="bt">BSF Genesis</div></div></div>
+        <div class="book-card"><span class="bi">📋</span><div><div class="bt">BSF Torah</div></div></div>
+        <div class="book-card"><span class="bi">📋</span><div><div class="bt">BSF People of the Promised Land 1</div></div></div>
+        <div class="book-card"><span class="bi">📋</span><div><div class="bt">BSF Divided Kingdom</div></div></div>
+        <div class="book-card"><span class="bi">📋</span><div><div class="bt">BSF Matthew A</div></div></div>
+        <div class="book-card"><span class="bi">📋</span><div><div class="bt">BSF Matthew B</div></div></div>
+        <div class="book-card"><span class="bi">📋</span><div><div class="bt">BSF John A</div></div></div>
+        <div class="book-card"><span class="bi">📋</span><div><div class="bt">BSF John B</div></div></div>
+        <div class="book-card"><span class="bi">📋</span><div><div class="bt">BSF Acts</div></div></div>
+        <div class="book-card"><span class="bi">📋</span><div><div class="bt">BSF Romans</div></div></div>
+        <div class="book-card"><span class="bi">📋</span><div><div class="bt">BSF Revelation</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STUDY BIBLES -->
+  <div id="lib-bibles" class="tab-panel">
+    <div class="book-category">
+      <div class="book-cat-title">📖 Bible Translations &amp; Study Editions</div>
+      <div class="book-grid">
+        <div class="book-card"><span class="bi">📖</span><div><div class="bt">The Bible</div><div class="bs">Primary reading copy</div></div></div>
+        <div class="book-card"><span class="bi">📖</span><div><div class="bt">New Living Translation (NLT)</div></div></div>
+        <div class="book-card"><span class="bi">📖</span><div><div class="bt">Amplified Bible</div></div></div>
+        <div class="book-card"><span class="bi">📖</span><div><div class="bt">CSB Baker Illustrated Study Bible</div></div></div>
+        <div class="book-card"><span class="bi">📖</span><div><div class="bt">CSB Life Connections Bible</div></div></div>
+        <div class="book-card"><span class="bi">📖</span><div><div class="bt">Disciples Study Bible</div></div></div>
+        <div class="book-card"><span class="bi">📖</span><div><div class="bt">Closer Walk New Testament</div></div></div>
+        <div class="book-card"><span class="bi">📖</span><div><div class="bt">Chronological Bible Reading</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMENTARIES -->
+  <div id="lib-commentaries" class="tab-panel">
+    <div class="book-category">
+      <div class="book-cat-title">🔵 Commentaries &amp; Major Reference Works</div>
+      <div class="book-grid">
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Believer's Bible Commentary</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Bible Background Commentary</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Critical Commentary on the Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Commentary on the Holy Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Bible Exposition</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Bible Expositor's Handbook</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Exegetical Dictionary of the NT</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Expository Dictionary of Bible Words</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Bible Charts</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Bible Chronology</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Bible Books Summary</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Compact Bible Handbook</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">ESV Bible Atlas</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">A Treasury of Books for Bible Study</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Bibliology and Hermeneutics</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Bible Hermeneutics Workbook</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Bible in 16 Verses</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Every Prophecy of the Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Bible Study Boot Camp</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">10 Principles for Studying the Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Biblical Sermons</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Classic Sermons on Heaven &amp; Hell</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Classic Sermons on Praise</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Classic Sermons on the Church</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Classic Sermons on the Cross of Christ</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Classic Sermons on Miracles of Jesus</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Classic Sermons on World Evangelism</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Classic Sermons on Worship</div></div></div>
+      </div>
+    </div>
+    <div class="book-category">
+      <div class="book-cat-title">📜 Individual Book Studies &amp; Commentaries</div>
+      <div class="book-grid">
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Genesis</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Exodus 1–19 &amp; 20–40</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Deuteronomy</div><div class="bs">Becoming Holy People</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Hosea / Amos</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Daniel</div><div class="bs">God's Pattern for the Future</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Daniel–Revelation</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Ezekiel / Ezra</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Matthew / Mark / Luke</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Acts (Tyndale)</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Romans / Galatians</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Ephesians</div><div class="bs">Wholeness for a Broken World</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Philippians / Colossians / Philemon</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">1 &amp; 2 Thessalonians</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">1 &amp; 2 Timothy; Titus</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">1 &amp; 2 Peter; Jude</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">1, 2 &amp; 3 John / James</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Revelation</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">1 &amp; 2 Kings / 1 &amp; 2 Chronicles</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Ecclesiastes and Canticles</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">Colossians and Philemon</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">1 Corinthians</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">1 Peter</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">2 Chronicles</div></div></div>
+        <div class="book-card"><span class="bi">📜</span><div><div class="bt">2 Timothy</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEVOTIONAL -->
+  <div id="lib-devotional" class="tab-panel">
+    <div class="book-category">
+      <div class="book-cat-title">🕊 Devotional &amp; Spiritual Formation</div>
+      <div class="book-grid">
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">A Shepherd Looks at Psalm 23</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">A Cry for Mercy</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">A Hunger for God</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">A Method for Prayer</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Abide in Christ</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Battlefield of the Mind</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Bedside Blessings</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Daily Celebration</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Daily Discipleship</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Daily Guideposts</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Daily Blessings</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Delighting in the Trinity</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Devotions for Kindred Spirits</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Disappointment with God</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Don't Waste Your Life</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Encourage Me</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Enjoying Where You Are</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Confessions — St. Augustine</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Conformed to His Image</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">A Life God Rewards</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">A Life Well Lived</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">A Man After God's Own Heart</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Beauty for Ashes</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Bread for the Journey</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Can You Drink the Cup?</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Come Before Winter</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Expository Exultation</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Every Day Matters</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Beholding Christ</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Exalting Christ the Lamb of God</div></div></div>
+        <div class="book-card"><span class="bi">🕊</span><div><div class="bt">Exalting Christ the Son of God</div></div></div>
+      </div>
+    </div>
+    <div class="book-category">
+      <div class="book-cat-title">✝ Discipleship &amp; Christian Growth</div>
+      <div class="book-grid">
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Disciples are Made not Born</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Discipleship Ministry</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Discipleship Box Set</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Discipleship Workbook</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Call to Discipleship</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">8 Essentials for Following Jesus</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">12 Step Christianity</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Building Up One Another</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Dropping Your Guard</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Serendipity</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Life Connections</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Simply Sharing Jesus</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Contagious Christianity</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Evangelism and the Sovereignty of God</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Discovering the Mission of God</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">A Biblical Theology of Missions</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Essentials of New Life</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">What it Means to be a Christian</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">Christian Life</div></div></div>
+        <div class="book-card"><span class="bi">✝</span><div><div class="bt">The Living God</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKS A–F -->
+  <div id="lib-books-af" class="tab-panel">
+    <div class="book-category">
+      <div class="book-cat-title">📗 Books A–F</div>
+      <div class="book-grid">
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">A Family Album</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">A Matter of Days</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">A Minister Everyone Would Respect</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">A Ministry Anyone Could Trust</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">A Reason for Hope in Time of Tragedy</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">A Study of Ephesians</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Abraham: The Friend of God</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Adam: God's Beloved</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Adventuring with God</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Aesop's Fables</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Aging</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">The Apostle's Creed</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Becoming a People of Grace</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Befriending Death</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Being a Child of God</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Between Heaven and Hell</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Beyond the Mirror</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Bless You</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Book of Questions</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Building a Second Brain</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Building Blocks of Biblical Character</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Building Christian Values</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">C is for Christmas</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">CS Lewis: 5 Best Books</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Case for Christ — CS Lewis</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Calm Answers for a Confused Church</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Can One Person Make a Difference?</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">A Castaway</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Changing Wanderers into Worshipers</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Character Sketches</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Character First — Tolerance</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Character First — Truthfulness</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Christ at the Crossroads</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Christ in the Passover</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Christian Maturity — Philippians</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Church History Bootcamp</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Church. Why Bother?</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Clearing the High Hurdles</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Clowning in Rome</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Coming to Terms with Sin</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Compassion</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Compassion: A Reflection on the Christian Life</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Confronting Christianity</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Conquering Through Conflict</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Conscience</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Contribution</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Cross of Christ</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Crystallization — Galatians</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Culture Assault</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Dangerous Calling</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">David: A Man of Passion and Destiny</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">David's Heart</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Dear Graduate</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Destiny and Deliverance</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Discovering God's Mysteries</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Discovering Matthew</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Discovering Philippians and Colossians</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Divided Kingdom</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Ecclesiology and Eschatology</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Elijah: A Man of Heroism and Humility</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Esther: A Woman for Such a Time as This</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Esther: A Woman of Strength and Dignity</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Eternal Security</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Excellence in Ministry</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Exodus: God's Plan. God's People.</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">5 Secrets of Living</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">50 People Every Christian Should Know</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">52 Family Adventures</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Faith Alone</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Faith that Endures in Times like These</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Faith. Hope. Stories</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Faith's Checkbook</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Fifty Reasons Why Jesus Came to Die</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Finding My Way Home</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Finding God in Unexpected Places</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">First Light</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Five Meaningful Minutes a Day</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Flesh and Spirit in Conflict</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Flying Closer to the Flame</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Following Christ the Man of God</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">For Those Who Hurt</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">Ephesians</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">From Fear to Love</div></div></div>
+        <div class="book-card"><span class="bi">📗</span><div><div class="bt">The Fruits of Grace</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKS G–L -->
+  <div id="lib-books-gl" class="tab-panel">
+    <div class="book-category">
+      <div class="book-cat-title">📘 Books G–L</div>
+      <div class="book-grid">
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Gaining a Fresh Perspective</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Known By Our Fruit</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Galatians</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Galatians. Letter of Liberation</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Galatians. Experiencing Freedom</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Galatians</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Galatians. Ephesians. Philippians. Colossians</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Genesis</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Generous Justice</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Genesis. Beginning and Blessing</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Gentle and Lowly</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Getting Through the Tough Stuff</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">God's Attributes</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">God Isn't in a Hurry</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">God Loves Me. So What!</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">God. What is He Like?</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">God's Design for the Family</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">God's Masterwork. Concerto in 66 Movements</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">God's Provision in Time of Need</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Golden Nuggets from Forgotten Places</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Gospel of Matthew</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Great Stories from OT Lives</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Growing Deep in the Christian Life</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Growing in Christ</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Growing Pains</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Growing Strong in the Seasons of Life</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Growing Wise in Family Life</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Spiritual Growth Checklist</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Habakkuk</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Haggai</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Halley's Bible Handbook</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Halley's BH Abridged</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Hand Me Another Brick</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">He Gave Gifts</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">He Still Moves Stones</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">He Walks With Me</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Hearing From God Each Morning</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Heart Speaks to Heart</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Hebrews</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Hebrew Word Study OT</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Hebrew-Greek Study Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Hebrews. James</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Henry Nouwen Illuminated</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Henry Nouwen. About</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Living in the Spirit</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">His Name is Jesus</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Holiness of God</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Holy Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Re Create</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Home. Where Life Makes Up Its Mind</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Honest Evangelism</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Hope Again</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Hope in Hurtful Times</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Hosea</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">How Can I Grow as a Christian?</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">How Can I Be a Caring Christian?</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">How to Do a Bible Word Study</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">How to Hear from God</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">How to Read the Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">How to Study the Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">How to Study the Bible 2</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">How to Study the Bible and Enjoy it</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">How to Study the Bible 3</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">How to Read the Psalms</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">How to be Filled with the Holy Spirit</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">How to Study the Bible in 1 Hour</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Humanity and Sin</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Husbands and Wives</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Hymns</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Imitation of Christ</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Improving Your Serve</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">In Memoriam</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">In the Name of Jesus</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Incomparable Christ</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Inductive Bible Study Guide</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Inductive BS Worksheet</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Inside Out</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Basic Youth Conflicts</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Integrity. The Mark of Godliness</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Intimacy</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Intimacy with the Almighty</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Intimacy. Essays</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Is God Real?</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Isaiah 40–66</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Isaiah</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Is Peace Possible?</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Issues and Answers in Jesus' Day</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of James</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">James. Living Your Faith</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">JB Phillips NT</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Jeremiah</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Jeremiah</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Jeremiah 26–52</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Jeremiah and Lamentations</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Jesus. Centerpiece of Scripture</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Jesus. The Greatest Life of All</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Job</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of John</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">John. Lesson 1</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">New Testament</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Jonathan Edwards</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Jonah</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Joshua</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Joseph. God Planned it for Good</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Joseph. From Pit to Pinnacle</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Joseph. From Prison to Palace</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Joy in the Journey</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Jude</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Judges</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Key Words of the Christian Life</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Killing Giants, Pulling Thorns</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Kingdom Life. Matt 5:1–12</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">King's Cross</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Know What You Believe</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Know Why You Believe</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Knowing God</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Knowing God Intimately</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Lamentations</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Laugh Again</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Lead Out</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Leadership. Influence that Inspires</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Learning to Walk by Grace. Romans 6–11</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Lectures to My Students</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Lectures on Revivals</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Letters to Marc About Jesus</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Leviticus</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Leviticus</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Leviticus. Numbers</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Life Application Study Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Life of the Beloved</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Life Without Strife</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Lifesigns</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Literal Hermeneutic</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Live Like a King</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Living Above the Level of Mediocrity</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Living Beyond Regrets</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Living Beyond the Ordinary</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Living by the Book</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Living on the Ragged Edge</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Love in a Fearful Land</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Love, Acceptance and Forgiveness</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Loving One Another</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKS M–R -->
+  <div id="lib-books-mr" class="tab-panel">
+    <div class="book-category">
+      <div class="book-cat-title">📘 Books M–R</div>
+      <div class="book-grid">
+        <div class="book-card"><span class="bi">🔬</span><div><div class="bt">Remove</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Making New Discoveries</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Malachi</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Man to Man</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Mark</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Mark</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Mark of a Christian</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Marriage. From Surviving to Thriving</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">This Momentary Marriage</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Matthew</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Matthew</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Matthew 1–7</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Maturity</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Meet Your King</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Meet Yourself in the Psalms</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Meet the Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Meeting God</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Memorable Scenes from the OT</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Men of the Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Mere Christianity</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Micah</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Milestones to Maturity</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Mind of Christ</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Ministry and Spirituality</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Molder of Dreams</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">More than a Carpenter</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Morning and Evening. Revised</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Morning and Evening. Classic</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Moses</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Moses' Greatest Moments</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">My Heart Christ's Home</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Nahum</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Names of God's People</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Necessary Endings</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Nehemiah</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Never Give Up!</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">New American Standard Bible (NASB)</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">New Bible Dictionary</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">New Hope for Life's Challenges</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">New Life. New Lifestyle</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">New Testament Postcards</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">New Testament Words</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">New King James Bible (NKJV)</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Numbers</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Obadiah</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Old Testament Characters</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">On Being a Servant of God</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">One Solitary Life</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Open Windows</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Our Greatest Gift</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Out of Solitude</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Parenting. From Surviving to Thriving</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Paul. Living for the Call of Christ</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Paul the Leader</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Paul's First Prayer</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Philippians</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Philemon</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Hinds Feet on High Places</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Power through Prayer</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Practical Christianity</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Practical Helps for a Hurting Church</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Prayer. Does it Make any Difference?</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Prayer</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Praying for One Another</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Praying with the KGB</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Preaching and Preachers</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Preaching</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Proverbs</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Proverbs. Selected Studies</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Proverbs. Learning to Live Wisely</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Proverbs. Ecclesiastes</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Proverbs. The Message</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Text of Psalms</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Psalms</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Questions Christians Ask</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Reaching for the Invisible God</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Real Peace</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Real Worship</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Relating to Others in Love</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Normal Christian Church</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Return of the Prodigal Son</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Revelation</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Romans</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Romans. A Model for Bible Study</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Rumors of Another World</div></div></div>
+      </div>
+    </div>
+  </div>
+
+ <!-- BOOKS S–Z -->
+  <div id="lib-books-sz" class="tab-panel">
+    <div class="book-category">
+      <div class="book-cat-title">📘 Books S–Z</div>
+      <div class="book-grid">
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Sabbatical Journey</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Saving Your Marriage Before it Starts</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Searching the Scriptures</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Second Wind</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Secrets of the Christian Life</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Seeds of Hope</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Seeking Allah, Finding Jesus</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Serendipity New Testament for Groups</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Serendipity New Testament for Youth</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Serendipity Student Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Sermon on the Mount</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Shedding Light on Our Dark Side</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Simple Faith</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Sit. Walk. Stand.</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">1,2 Samuel</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Minor Prophets</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">So You Want to Be Like Christ?</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Solomon</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Songs for All Seasons</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Canticles</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Soteriology</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Soul Survivor</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Spirit Controlled Temperament</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Spiritual Classics</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Spiritual Direction</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Spiritual Gifts</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Spiritual Leadership</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Spurgeon's Testimony</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Start Where You Are</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Starting Over</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Stones of Remembrance</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Strategy of Satan</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Strengthening Your Grip</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Strike the Original Match</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Strong's Hebrew Dictionary</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Strong's Exhaustive Concordance of the Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">Survey of the New Testament</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Acts of the Apostles</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Amplified Study Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Apostles</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Battle Belongs to the Lord</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Bible Jesus Read</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Book of Virtues</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Bride</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Children's Book of Virtues</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Chronological Study Bible. NKJV</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Church Awakening</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Consummation of Something Miraculous</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Daily Study Bible. Index Volume</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Daily Walk Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Darkness and the Dawn</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Declaration of Something Mysterious</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Englishman's Greek Concordance</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Englishman's Hebrew Concordance</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Expositor's Bible Commentary</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Finishing Touch</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Genesee Diary</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Glory of Christmas</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Golden Booklet of the True Christian Life</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Gospel According to Job</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Gospel of Luke</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Grace Awakening</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Hebrew-Greek Key Study Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Holy Spirit and the Believer</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Inner Voice of Love</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Inspirational Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Interpreter's Dictionary of the Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Interpreter's One-Volume Commentary on the Bible</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Jesus I Never Knew</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Jesus Style</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Joy of Following Jesus</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Lamentations of Jeremiah</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Letter to the Hebrews</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Letter to the Romans</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Letters of James and Peter</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Letters of John and Jude</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Letters to the Corinthians</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Letters to the Galatians and Ephesians</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Letters to the Philippians and Colossians</div></div></div>
+        <div class="book-card"><span class="bi">📘</span><div><div class="bt">The Letters</div></div></div>
+      </div>
+    </div>
+  </div>
+ 
+ <div class="ornament">✦ ✝ ✦</div>
+
+  <!-- SCIENCE & MATH -->
+  <div id="lib-books-mr2" class="tab-panel">
+    <div class="book-category">
+      <div class="book-cat-title">🔬 Science &amp; Math</div>
+      <div class="book-grid">
+        <div class="book-card"><span class="bi">🔬</span><div><div class="bt">Rocket Propulsion Elements</div></div></div>
+        <div class="book-card"><span class="bi">🔬</span><div><div class="bt">A Matter of Days</div></div></div>
+        <div class="book-card"><span class="bi">🔬</span><div><div class="bt">Building a Second Brain</div></div></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-title">✝ God's Word with Erv</span>
+      <p>A personal sanctuary for Bible study, daily journal reflections, and the pursuit of absolute truth through Scripture, Science, and Mathematics.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#journal">Journal</a></li>
+        <li><a href="library.html">Library</a></li>
+        <li><a href="index.html#resources">Resources</a></li>
+        <li><a href="index.html#about">About</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Library Sections</h5>
+      <ul>
+        <li><a href="#" onclick="showLib('interpreters');return false;">Interpreter's Bible</a></li>
+        <li><a href="#" onclick="showLib('be-series');return false;">Be Series</a></li>
+        <li><a href="#" onclick="showLib('bsf');return false;">BSF Materials</a></li>
+        <li><a href="#" onclick="showLib('bibles');return false;">Study Bibles</a></li>
+        <li><a href="#" onclick="showLib('commentaries');return false;">Commentaries</a></li>
+        <li><a href="#" onclick="showLib('devotional');return false;">Devotional</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 God's Word with Erv. All rights reserved.</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="library.html">Library</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  function showLib(id) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    const panel = document.getElementById('lib-' + id);
+    if (panel) panel.classList.add('active');
+    document.querySelectorAll('.tab-btn').forEach(b => {
+      if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + id + "'")) {
+        b.classList.add('active');
+      }
+    });
+    window.scrollTo({top: document.querySelector('.lib-tabs').offsetTop - 80, behavior: 'smooth'});
+  }
+</script>
+
+
+</body></html>
