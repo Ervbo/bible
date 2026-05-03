@@ -2,10 +2,18 @@
 <!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Library | God's Word with Erv — ervbible.com</title>
+  <title>My Personal Library | God's Word with Erv — ervbible.ervbo.com</title>
   <meta name="description" content="Erv's complete personal Bible study library — every volume organized by series, commentary, devotional, and more.">
   <meta name="keywords" content="Bible library, Bible commentaries, Be Series, Interpreter's Bible, BSF, devotional books, Christian books">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ervbible.ervbo.com/library.html">
+  <meta property="og:title" content="My Personal Library — God's Word with Erv">
+  <meta property="og:description" content="Erv's complete personal Bible study library — every volume organized by series, commentary, devotional, and more.">
+  <meta property="og:url" content="https://ervbible.ervbo.com/library.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="My Personal Library — God's Word with Erv">
+  <meta name="twitter:description" content="Erv's complete personal Bible study library — every volume organized by series, commentary, devotional, and more.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%233d2b1f'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' font-family='Georgia,serif' fill='%23d4af37'%3E✝%3C/text%3E%3C/svg%3E">
   <meta property="og:image" content="https://placehold.co/1200x630">
   <meta name="twitter:image" content="https://placehold.co/1200x630">
@@ -78,6 +86,24 @@
     @media(max-width:500px){
       .book-grid{grid-template-columns:1fr}
     }
+    /* ── Search bar ── */
+    .lib-search-wrap{position:relative;margin-bottom:1.25rem;max-width:560px}
+    .lib-search{width:100%;padding:.65rem 2.5rem .65rem 1rem;border:2px solid var(--border);background:var(--cream);font-family:Georgia,serif;font-size:.95rem;color:var(--text-dark);border-radius:3px;outline:none;transition:border-color .2s,box-shadow .2s}
+    .lib-search:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.18)}
+    .lib-search-clear{position:absolute;top:50%;right:.5rem;transform:translateY(-50%);background:transparent;border:none;color:var(--text-light);font-size:1.4rem;cursor:pointer;padding:0 .4rem;line-height:1}
+    .lib-search-clear:hover{color:var(--mahogany)}
+    .lib-search-meta{margin-top:.5rem;font-size:.82rem;color:var(--text-light);font-style:italic}
+    /* ── Tab count badges ── */
+    .tab-count{display:inline-block;margin-left:.4rem;padding:.05rem .4rem;background:rgba(61,43,31,.12);color:var(--mahogany);border-radius:10px;font-size:.7rem;font-weight:bold}
+    .tab-btn.active .tab-count{background:rgba(212,175,55,.25);color:var(--gold)}
+    /* ── Search-active state: show every panel & hide tabs ── */
+    body.searching .lib-tabs{display:none}
+    body.searching .tab-panel{display:block}
+    body.searching .book-card.hidden{display:none}
+    body.searching .book-category.hidden{display:none}
+    body.searching .series-card.hidden{display:none}
+    body.searching .vol-tag.hidden{display:none}
+    body.searching .tab-panel.hidden{display:none}
   </style>
 </head>
 <body>
@@ -115,6 +141,12 @@
     <p>Browse by series, category, or subject</p>
   </div>
 
+  <div class="lib-search-wrap">
+    <input type="search" id="lib-search" class="lib-search" placeholder="🔍 Search the library — type any title or word…" aria-label="Search the library">
+    <button type="button" id="lib-search-clear" class="lib-search-clear" aria-label="Clear search" hidden>×</button>
+    <div id="lib-search-meta" class="lib-search-meta" aria-live="polite" hidden></div>
+  </div>
+
   <div class="lib-tabs" role="tablist">
     <button class="tab-btn active" onclick="showLib('interpreters')">📚 Interpreter's Bible</button>
     <button class="tab-btn" onclick="showLib('be-series')">✝ Be Series</button>
@@ -126,7 +158,7 @@
     <button class="tab-btn" onclick="showLib('books-gl')">📘 Books G–L</button>
     <button class="tab-btn" onclick="showLib('books-mr')">📘 Books M–R</button>
     <button class="tab-btn" onclick="showLib('books-sz')">📘 Books S–Z</button>
-    <button class="tab-btn" onclick="showLib('books-mr2')">🔬 Science &amp; Math</button>
+    <button class="tab-btn" onclick="showLib('science')">🔬 Science &amp; Math</button>
 
   </div>
 
@@ -602,7 +634,6 @@
     <div class="book-category">
       <div class="book-cat-title">📘 Books M–R</div>
       <div class="book-grid">
-        <div class="book-card"><span class="bi">🔬</span><div><div class="bt">Remove</div></div></div>
         <div class="book-card"><span class="bi">📘</span><div><div class="bt">Making New Discoveries</div></div></div>
         <div class="book-card"><span class="bi">📘</span><div><div class="bt">Text of Malachi</div></div></div>
         <div class="book-card"><span class="bi">📘</span><div><div class="bt">Man to Man</div></div></div>
@@ -779,11 +810,10 @@
       </div>
     </div>
   </div>
- 
- <div class="ornament">✦ ✝ ✦</div>
+
 
   <!-- SCIENCE & MATH -->
-  <div id="lib-books-mr2" class="tab-panel">
+  <div id="lib-science" class="tab-panel">
     <div class="book-category">
       <div class="book-cat-title">🔬 Science &amp; Math</div>
       <div class="book-grid">
@@ -825,7 +855,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 God's Word with Erv. All rights reserved.</p>
+    <p>© <span id="footer-year">2025</span> God's Word with Erv. All rights reserved.</p>
     <nav>
       <a href="index.html">Home</a>
       <a href="library.html">Library</a>
@@ -834,18 +864,147 @@
 </footer>
 
 <script>
-  function showLib(id) {
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    const panel = document.getElementById('lib-' + id);
+  // ── Tab switching + URL hash deep-linking ──
+  function showLib(id, opts) {
+    opts = opts || {};
+    document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+    document.querySelectorAll('.tab-btn').forEach(function(b){
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    var panel = document.getElementById('lib-' + id);
     if (panel) panel.classList.add('active');
-    document.querySelectorAll('.tab-btn').forEach(b => {
-      if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + id + "'")) {
+    document.querySelectorAll('.tab-btn').forEach(function(b){
+      var oc = b.getAttribute('onclick') || '';
+      if (oc.indexOf("'" + id + "'") !== -1) {
         b.classList.add('active');
+        b.setAttribute('aria-selected', 'true');
       }
     });
-    window.scrollTo({top: document.querySelector('.lib-tabs').offsetTop - 80, behavior: 'smooth'});
+    if (history.replaceState) {
+      history.replaceState(null, '', '#' + id);
+    }
+    if (!opts.noScroll) {
+      var tabs = document.querySelector('.lib-tabs');
+      if (tabs) window.scrollTo({top: tabs.offsetTop - 80, behavior: 'smooth'});
+    }
   }
+
+  // ── Inject book-count badges into each tab button ──
+  function injectCounts() {
+    document.querySelectorAll('.tab-btn').forEach(function(btn){
+      var oc = btn.getAttribute('onclick') || '';
+      var m = oc.match(/showLib\('([^']+)'\)/);
+      if (!m) return;
+      var panel = document.getElementById('lib-' + m[1]);
+      if (!panel) return;
+      var n = panel.querySelectorAll('.book-card').length
+            + panel.querySelectorAll('.vol-tag').length;
+      var span = document.createElement('span');
+      span.className = 'tab-count';
+      span.textContent = n;
+      btn.appendChild(span);
+    });
+  }
+
+  // ── Live search across all panels ──
+  function setupSearch() {
+    var input = document.getElementById('lib-search');
+    var clearBtn = document.getElementById('lib-search-clear');
+    var meta = document.getElementById('lib-search-meta');
+    if (!input) return;
+
+    function applyFilter() {
+      var q = input.value.trim().toLowerCase();
+      if (!q) {
+        document.body.classList.remove('searching');
+        clearBtn.hidden = true;
+        meta.hidden = true;
+        document.querySelectorAll('.hidden').forEach(function(el){ el.classList.remove('hidden'); });
+        return;
+      }
+      document.body.classList.add('searching');
+      clearBtn.hidden = false;
+
+      var hits = 0;
+
+      document.querySelectorAll('.book-card').forEach(function(card){
+        var t = (card.querySelector('.bt') || {}).textContent || '';
+        var s = (card.querySelector('.bs') || {}).textContent || '';
+        var hay = (t + ' ' + s).toLowerCase();
+        if (hay.indexOf(q) !== -1) {
+          card.classList.remove('hidden');
+          hits++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      document.querySelectorAll('.vol-tag').forEach(function(tag){
+        var hay = tag.textContent.toLowerCase();
+        if (hay.indexOf(q) !== -1) {
+          tag.classList.remove('hidden');
+          hits++;
+        } else {
+          tag.classList.add('hidden');
+        }
+      });
+
+      document.querySelectorAll('.book-category').forEach(function(cat){
+        var any = cat.querySelectorAll('.book-card:not(.hidden)').length > 0;
+        cat.classList.toggle('hidden', !any);
+      });
+
+      document.querySelectorAll('.series-card').forEach(function(sc){
+        var anyTag = sc.querySelectorAll('.vol-tag:not(.hidden)').length > 0;
+        var headEl = sc.querySelector('h4');
+        var headHit = headEl && headEl.textContent.toLowerCase().indexOf(q) !== -1;
+        sc.classList.toggle('hidden', !anyTag && !headHit);
+      });
+
+      document.querySelectorAll('.tab-panel').forEach(function(panel){
+        var anyVisible =
+          panel.querySelectorAll('.book-card:not(.hidden)').length > 0 ||
+          panel.querySelectorAll('.vol-tag:not(.hidden)').length > 0 ||
+          panel.querySelectorAll('.series-card:not(.hidden)').length > 0;
+        panel.classList.toggle('hidden', !anyVisible);
+      });
+
+      meta.hidden = false;
+      meta.textContent = hits === 0
+        ? 'No matches for "' + input.value + '"'
+        : hits + ' match' + (hits === 1 ? '' : 'es') + ' for "' + input.value + '"';
+    }
+
+    input.addEventListener('input', applyFilter);
+    clearBtn.addEventListener('click', function(){
+      input.value = '';
+      applyFilter();
+      input.focus();
+    });
+    input.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') {
+        input.value = '';
+        applyFilter();
+      }
+    });
+  }
+
+  function setYear(){
+    var y = document.getElementById('footer-year');
+    if (y) y.textContent = new Date().getFullYear();
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    injectCounts();
+    setupSearch();
+    setYear();
+    var hash = (location.hash || '').replace(/^#/, '');
+    var validIds = ['interpreters','be-series','bsf','bibles','commentaries','devotional','books-af','books-gl','books-mr','books-sz','science'];
+    if (validIds.indexOf(hash) !== -1) {
+      showLib(hash, {noScroll: true});
+    }
+  });
 </script>
 
 
