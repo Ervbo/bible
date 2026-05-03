@@ -1,17 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>God's Word with Erv | Bible Study, Science andy Daily Reflections — ervbible.com</title>
+  <title>God's Word with Erv | Bible Study, Science and Daily Reflections — ervbible.ervbo.com</title>
   <meta name="description" content="A personal sanctuary for Bible study, daily journal reflections, and the pursuit of absolute truth through Scripture, Science, and Mathematics — with Erv.">
   <meta name="keywords" content="Bible study, daily journal, Scripture, theology, faith and science, Bible resources, devotional, Christian blog">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ervbible.ervbo.com/">
   <meta property="og:title" content="God's Word with Erv">
   <meta property="og:description" content="A lifelong student of Scripture, Math & Physics sharing daily reflections, Bible study notes, and resources.">
   <meta property="og:image" content="https://placehold.co/1200x630/3d2b1f/d4af37?text=God%27s+Word+with+Erv">
-  <meta property="og:url" content="https://ervbible.com">
+  <meta property="og:url" content="https://ervbible.ervbo.com/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="God's Word with Erv">
   <meta name="twitter:description" content="A lifelong student of Scripture, Math & Physics sharing daily reflections, Bible study notes, and resources.">
@@ -37,6 +37,8 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Georgia', 'Times New Roman', serif;
@@ -294,7 +296,7 @@
     "@type": "Blog",
     "name": "God's Word with Erv",
     "description": "A personal sanctuary for Bible study, daily journal reflections, and the pursuit of absolute truth through Scripture, Science, and Mathematics.",
-    "url": "https://ervbible.com",
+    "url": "https://ervbible.ervbo.com/",
     "author": {
       "@type": "Person",
       "name": "Erv"
@@ -303,14 +305,50 @@
       {
         "@type": "BlogPosting",
         "headline": "In the Beginning Was the Word — and the Equation",
-        "datePublished": "2025-01-19",
+        "datePublished": "2025-01-15",
         "description": "Exploring the stunning parallels between John 1:1 and the mathematical foundations of the universe."
       },
       {
         "@type": "BlogPosting",
         "headline": "Psalm 19: The Heavens Declare — A Physicist's Reading",
         "datePublished": "2025-01-10",
+        "url": "https://ervbible.ervbo.com/post-psalm-19.html",
         "description": "What does it mean that creation speaks? A study through the lens of physics and cosmology."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Absolute Truth in Numbers: Why 2+2=4 Points to God",
+        "datePublished": "2025-01-08",
+        "url": "https://ervbible.ervbo.com/post-math-truth.html",
+        "description": "Mathematical truth is discovered, not invented — a reflection on the unreasonable effectiveness of mathematics."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Morning Reflection: Proverbs 3:5–6 and the Limits of Human Reason",
+        "datePublished": "2025-01-06",
+        "url": "https://ervbible.ervbo.com/post-proverbs-3.html",
+        "description": "Trusting God above our own understanding — even in science."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Romans 1:20 — General Revelation and the Fine-Tuned Universe",
+        "datePublished": "2025-01-03",
+        "url": "https://ervbible.ervbo.com/post-romans-1.html",
+        "description": "Paul writes that God's invisible qualities are clearly seen in creation."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Quantum Mechanics and the Mystery of Consciousness",
+        "datePublished": "2024-12-28",
+        "url": "https://ervbible.ervbo.com/post-quantum.html",
+        "description": "The observer problem in quantum physics raises profound questions Scripture has long addressed."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Genesis 1 and the Big Bang: Conflict or Convergence?",
+        "datePublished": "2024-12-22",
+        "url": "https://ervbible.ervbo.com/post-genesis-bigbang.html",
+        "description": "An exegetical and scientific look at the creation narrative."
       }
     ]
   }
@@ -346,7 +384,6 @@
         <h1 class="hero-title">In the Beginning Was the Word — and the Equation</h1>
         <p class="hero-excerpt">"In the beginning was the Word…" — John 1:1. What if the Logos of Scripture and the mathematical logos of physics are pointing to the same Author? A deep dive into the stunning parallels between divine revelation and the language of the universe.</p>
         <p class="hero-meta">January 15, 2025 &nbsp;·&nbsp; Scripture &amp; Science &nbsp;·&nbsp; 8 min read</p>
-        <a href="https://study-insight-prayer.deploypad.app/" target="_blank" rel="noopener" class="btn">Read the Study →</a>
       </div>
       <div class="hero-image">
         <img src="https://placehold.co/540x360/2a1d13/d4af37?text=John+1%3A1" alt="Featured study illustration">
@@ -457,12 +494,12 @@
       </div>
 
       <div class="resources-tabs" role="tablist">
-        <button class="tab-btn active" onclick="showTab('physical')">📚 Physical Library</button>
-        <button class="tab-btn" onclick="showTab('online')">🌐 Online Resources</button>
-        <button class="tab-btn" onclick="showTab('ai')">🤖 AI Tools</button>
+        <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-physical" onclick="showTab('physical', this)">📚 Physical Library</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-online" onclick="showTab('online', this)">🌐 Online Resources</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-ai" onclick="showTab('ai', this)">🤖 AI Tools</button>
       </div>
 
-      <div id="tab-physical" class="resource-grid">
+      <div id="tab-physical" class="resource-grid" role="tabpanel">
         <div class="resource-card">
           <span class="r-icon">📖</span>
           <span class="r-badge">Bible</span>
@@ -508,7 +545,7 @@
         </div>
       </div>
 
-      <div id="tab-online" class="resource-grid" style="display:none">
+      <div id="tab-online" class="resource-grid" role="tabpanel" style="display:none">
         <div class="resource-card">
           <span class="r-icon">🔵</span>
           <span class="r-badge">Online Bible Tool</span>
@@ -532,7 +569,7 @@
         </div>
       </div>
 
-      <div id="tab-ai" class="resource-grid" style="display:none">
+      <div id="tab-ai" class="resource-grid" role="tabpanel" style="display:none">
         <div class="resource-card">
           <span class="r-icon">🤖</span>
           <span class="r-badge">AI Notebook</span>
@@ -572,22 +609,24 @@
         <div class="widget">
           <h4>✦ Categories</h4>
           <ul class="categories-list">
-            <li>Scripture Studies <span>12</span></li>
-            <li>Daily Journal <span>28</span></li>
-            <li>Faith &amp; Science <span>7</span></li>
-            <li>Mathematics <span>5</span></li>
-            <li>Physics &amp; Cosmology <span>4</span></li>
-            <li>Resources &amp; Tools <span>3</span></li>
+            <li>Scripture Studies <span>4</span></li>
+            <li>Daily Journal <span>1</span></li>
+            <li>Faith &amp; Science <span>3</span></li>
+            <li>Mathematics <span>1</span></li>
+            <li>Physics &amp; Cosmology <span>2</span></li>
+            <li>Resources &amp; Tools <span>1</span></li>
           </ul>
         </div>
 
         <div class="widget">
           <h4>✦ Stay Connected</h4>
-          <div class="newsletter-form">
-            <input type="text" placeholder="Your name" aria-label="Your name">
-            <input type="email" placeholder="Your email address" aria-label="Email address">
-            <button type="button">Subscribe to Updates</button>
-          </div>
+          <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="newsletter">
+            <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+            <input type="text" name="name" placeholder="Your name" aria-label="Your name">
+            <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required>
+            <button type="submit">Subscribe to Updates</button>
+          </form>
         </div>
       </aside>
     </section>
@@ -622,7 +661,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 God's Word with Erv · ervbible.com. All rights reserved.</p>
+      <p>© <span id="footer-year">2025</span> God's Word with Erv · ervbible.ervbo.com. All rights reserved.</p>
       <nav aria-label="Footer navigation">
         <a href="index.html">Home</a>
         <a href="#about">About</a>
@@ -632,12 +671,36 @@
     </div>
   </footer>
 
+  <script>
+    // Resource section tabs
+    function showTab(name, btn) {
+      ['physical', 'online', 'ai'].forEach(function (t) {
+        var panel = document.getElementById('tab-' + t);
+        if (panel) panel.style.display = (t === name) ? '' : 'none';
+      });
+      document.querySelectorAll('.tab-btn').forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      if (btn) {
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+      }
+    }
+
+    // Auto-update footer year
+    (function () {
+      var y = document.getElementById('footer-year');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Erv",
-    "url": "https://ervbible.com",
+    "url": "https://ervbible.ervbo.com/",
     "description": "Lifelong student of the Bible, Math, and Physics. Sharing daily reflections on Scripture, Science, and absolute truth."
   }
   </script>
