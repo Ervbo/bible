@@ -507,6 +507,20 @@ footer.colophon{
 .sitebar .home{font-weight:600;letter-spacing:.02em}
 .sitebar .home::before{content:"\2190\00a0"}
 .sitebar .util{color:var(--ink-faint)}
+.sitebar .right{display:flex;gap:6px 16px;align-items:baseline;flex-wrap:wrap}
+.sitebar .pdf{color:var(--accent-deep);font-weight:500}
+
+/* --- pdf download --- */
+.masthead-meta .dl{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:5px 12px;margin-top:-5px;
+  border:1px solid var(--rule-strong);border-radius:3px;
+  color:var(--accent-deep);text-decoration:none;
+  font-size:.74rem;letter-spacing:.09em;
+}
+.masthead-meta .dl:hover{border-color:var(--accent);background:var(--accent-wash)}
+.masthead-meta .dl svg{flex:none}
+.masthead-meta .dl .pp{color:var(--ink-faint);letter-spacing:.05em}
 
 /* ---------- print ---------- */
 @media print{
@@ -522,7 +536,7 @@ footer.colophon{
   }
   html{scroll-behavior:auto}
   body{background:#fff;color:#000;font-size:10.5pt;line-height:1.5}
-  .sitebar,.toc,.print-hide{display:none!important}
+  .sitebar,.toc,.print-hide,.masthead-meta .dl{display:none!important}
   .shell{display:block;max-width:none;padding:0}
   .masthead{padding-block:0 18pt;margin-bottom:18pt;border-bottom:1.5pt solid #000}
   h1{font-size:34pt}
@@ -550,7 +564,10 @@ footer.colophon{
 <div class="sitebar">
   <div class="inner">
     <a class="home" href="/">God&#39;s Word with Erv</a>
-    <span class="util">Scripture &middot; Science &middot; Truth</span>
+    <span class="right">
+      <span class="util">Scripture &middot; Science &middot; Truth</span>
+      <a class="pdf" href="/the-grammar-of-prayer.pdf" target="_blank" rel="noopener">PDF</a>
+    </span>
   </div>
 </div>
 
@@ -564,6 +581,10 @@ footer.colophon{
       <span>Nineteen parts</span>
       <span>Word study &amp; exposition</span>
       <span>Teaching notes throughout</span>
+      <a class="dl" href="/the-grammar-of-prayer.pdf" target="_blank" rel="noopener">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        Download PDF <span class="pp">49 pp</span>
+      </a>
     </div>
   </header>
 
