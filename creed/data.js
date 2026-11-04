@@ -129,8 +129,8 @@ window.ITEMS = [
   // Article 9
   { id: 41, a: 9, tier: 4, key: "D", text: "In the Apostles' Creed, \u201ccatholic church\u201d means the Roman Catholic Church.",
     why: "In the creed, \u201ccatholic\u201d means universal: all true believers everywhere.", refs: "Eph. 4:4\u20136; Rev. 7:9" },
-  { id: 42, a: 9, tier: 1, key: "D", text: "Only one organization is the true church, and no one outside it can be saved.",
-    why: "The church is all who belong to Christ. A group claiming to be the only true church is a hallmark of movements outside the faith.", refs: "1 Cor. 12:12\u201313; Eph. 4:4\u20136" },
+  { id: 42, a: 9, tier: 1, key: "A", text: "Everyone who truly trusts in Christ belongs to His one church, whatever their denomination.",
+    why: "The one holy catholic church is all who belong to Christ by faith. No single organization or denomination owns it, and salvation comes through Christ, not through membership.", refs: "1 Cor. 12:12\u201313; Eph. 4:4\u20136" },
   { id: 43, a: 9, tier: 2, key: null, text: "Infants of believers should be baptized.",
     lean: ["Believer's baptism", "Infant baptism"],
     why: "Debated, and one of the main reasons denominations exist.", refs: "Acts 2:38\u201339; Acts 16:33; Col. 2:11\u201312" },
