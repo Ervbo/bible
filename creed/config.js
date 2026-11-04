@@ -4,5 +4,5 @@
 window.CREED_CONFIG = {
   ownerName: 'Erv',
   ownerEmail: 'iamerv@gmail.com',
-  sheetEndpoint: ''
+  sheetEndpoint: 'https://script.google.com/macros/s/AKfycbzAJQDu24107sukwOk1bHaXJqdaa4dzMABZVCdisAjWfaUmsgN56voGKtyMU3RtkeI/exec'
 };
