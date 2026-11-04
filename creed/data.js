@@ -1,0 +1,183 @@
+// Statements for "The Apostles' Creed, Examined"
+// key: "A" = faithful answer is agree, "D" = faithful answer is disagree, null = open question (no right answer)
+// soft: disagreeing usually reflects wording concerns, so the flag is "worth exploring" rather than "differs"
+// lean: labels for where an open answer leans [if disagree, if agree]
+
+window.ARTICLES = [
+  { n: 1,  title: "God the Father, Maker of heaven and earth", creed: "I believe in God, the Father Almighty, Maker of heaven and earth." },
+  { n: 2,  title: "Jesus Christ, His only Son, our Lord", creed: "And in Jesus Christ, His only Son, our Lord," },
+  { n: 3,  title: "Conceived by the Spirit, born of the Virgin Mary", creed: "who was conceived by the Holy Spirit, born of the Virgin Mary," },
+  { n: 4,  title: "Suffered, crucified, died, buried, descended", creed: "suffered under Pontius Pilate, was crucified, died, and was buried. He descended into hell." },
+  { n: 5,  title: "Rose again on the third day", creed: "On the third day He rose again from the dead." },
+  { n: 6,  title: "Ascended and seated at God's right hand", creed: "He ascended into heaven and is seated at the right hand of God the Father Almighty." },
+  { n: 7,  title: "He will come to judge the living and the dead", creed: "From there He will come to judge the living and the dead." },
+  { n: 8,  title: "The Holy Spirit", creed: "I believe in the Holy Spirit," },
+  { n: 9,  title: "The holy catholic church, the communion of saints", creed: "the holy catholic church, the communion of saints," },
+  { n: 10, title: "The forgiveness of sins", creed: "the forgiveness of sins," },
+  { n: 11, title: "The resurrection of the body", creed: "the resurrection of the body," },
+  { n: 12, title: "The life everlasting", creed: "and the life everlasting. Amen." }
+];
+
+window.ITEMS = [
+  // Article 1
+  { id: 1, a: 1, tier: 1, key: "D", text: "There is more than one true God.",
+    why: "Scripture is clear that there is one God only. Belief in many gods is outside the Christian faith.", refs: "Deut. 6:4; Isa. 44:6; 1 Cor. 8:4\u20136" },
+  { id: 2, a: 1, tier: 1, key: "D", text: "God the Father was once a man and has a physical body.",
+    why: "God is spirit, eternal, and unchanging. A Father with a body of flesh and bones is a different God from the God of the Bible.", refs: "John 4:24; Num. 23:19; Ps. 90:2" },
+  { id: 3, a: 1, tier: 1, key: "A", text: "The Father, the Son, and the Holy Spirit are three distinct Persons who are one God.",
+    why: "Three distinct Persons, one God. The idea of one Person playing three roles is called modalism.", refs: "Matt. 28:19; John 1:1; 2 Cor. 13:14" },
+  { id: 4, a: 1, tier: 1, key: "D", text: "God is called \u201cFather\u201d because He fathered spirit children with a heavenly wife.",
+    why: "He is eternally the Father of the Son, and Father by adoption to all who believe. Not because He physically fathered children.", refs: "John 1:12\u201313; Rom. 8:15; Gal. 4:4\u20136" },
+  { id: 5, a: 1, tier: 1, key: "A", text: "God created everything, including matter, time, and angels, out of nothing.",
+    why: "Nothing exists that God did not make.", refs: "Gen. 1:1; Col. 1:16; Heb. 11:3" },
+  { id: 6, a: 1, tier: 3, key: null, text: "The days of Genesis 1 were ordinary 24-hour days.",
+    lean: ["Old-earth or non-literal days", "Young-earth, literal days"],
+    why: "Faithful Christians differ on the age of the earth and the length of the creation days.", refs: "Gen. 1; Ps. 90:4; 2 Pet. 3:8" },
+  { id: 7, a: 1, tier: 2, key: null, text: "God has determined in advance everything that happens.",
+    lean: ["Emphasis on human freedom", "Emphasis on God's determination"],
+    why: "Scripture affirms both God's sovereignty and human responsibility. How they fit together is debated.", refs: "Prov. 16:9; Eph. 1:11; Josh. 24:15" },
+
+  // Article 2
+  { id: 8, a: 2, tier: 1, key: "A", text: "Jesus existed eternally, before He was born in Bethlehem.",
+    why: "Jesus is eternal. A Jesus who began at His birth is not the Jesus of Scripture.", refs: "John 1:1; John 8:58; John 17:5" },
+  { id: 9, a: 2, tier: 1, key: "D", text: "Jesus was created by God, like the angels, perhaps as the archangel Michael.",
+    why: "Jesus is the uncreated Creator of all things, including the angels.", refs: "John 1:3; Col. 1:16; Heb. 1:4\u20136" },
+  { id: 10, a: 2, tier: 1, key: "A", text: "Jesus is fully God in the same sense that the Father is God.",
+    why: "Jesus is fully God, one in nature with the Father, not \u201ca god\u201d of a lesser kind.", refs: "John 20:28; Col. 2:9; Heb. 1:8" },
+  { id: 11, a: 2, tier: 1, key: "D", text: "It is wrong to worship Jesus.",
+    why: "The angels and the church worship Jesus, and the Father commands it.", refs: "Matt. 28:17; Phil. 2:10\u201311; Heb. 1:6" },
+  { id: 12, a: 2, tier: 1, key: "A", text: "Jesus is the only way to God.",
+    why: "No one comes to the Father except through Him.", refs: "John 14:6; Acts 4:12; 1 Tim. 2:5" },
+  { id: 13, a: 2, tier: 3, key: null, text: "The Son has been \u201cthe Son\u201d from all eternity, not only from His conception.",
+    lean: ["Incarnational sonship", "Eternal sonship (Nicene view)"],
+    why: "Open, provided His eternal deity is affirmed. The Nicene Creed teaches eternal sonship.", refs: "John 1:18; John 17:5; Heb. 1:2" },
+
+  // Article 3
+  { id: 14, a: 3, tier: 1, key: "A", text: "Jesus was conceived by the Holy Spirit, without a human father.",
+    why: "The virgin birth is part of the gospel record. Denying it crosses the line.", refs: "Isa. 7:14; Matt. 1:18\u201325; Luke 1:34\u201335" },
+  { id: 15, a: 3, tier: 1, key: "D", text: "Jesus only appeared to be human; He did not have a real human body.",
+    why: "Jesus was truly human, with a real body, mind, and emotions. The idea that He only seemed human is called Docetism.", refs: "John 1:14; Heb. 2:17; 1 John 4:2\u20133" },
+  { id: 16, a: 3, tier: 1, key: "A", text: "Jesus is one Person who is both fully God and fully man.",
+    why: "One Person with two natures, fully God and fully man.", refs: "John 1:14; Phil. 2:6\u20138; Col. 2:9" },
+  { id: 17, a: 3, tier: 1, key: "A", soft: true, text: "Mary can rightly be called the \u201cmother of God,\u201d because the One she bore is God.",
+    why: "This is historic orthodoxy, affirmed at the Council of Ephesus (431). It is a statement about Jesus, not a promotion of Mary. It is wrong only if it means Mary is divine. Many Protestants simply prefer \u201cmother of Jesus,\u201d so disagreeing here is often about wording.", refs: "Luke 1:35, 43; Gal. 4:4" },
+  { id: 18, a: 3, tier: 2, key: null, text: "It is appropriate to pray to Mary and ask for her intercession.",
+    lean: ["Protestant view: pray to God alone", "Catholic and Orthodox practice"],
+    why: "Worshiping Mary as divine is heresy. Asking Mary and the saints to pray for us is a Catholic and Orthodox practice that Protestants reject.", refs: "1 Tim. 2:5; Matt. 6:9" },
+  { id: 19, a: 3, tier: 3, key: null, text: "Mary remained a virgin her whole life.",
+    lean: ["Mary had other children", "Perpetual virginity"],
+    why: "Held by Catholics, Orthodox, and Luther; most modern Protestants disagree. (Protestants reject the separate claim that Mary was sinless.)", refs: "Matt. 1:25; Mark 6:3" },
+
+  // Article 4
+  { id: 20, a: 4, tier: 1, key: "A", text: "Jesus was a real person who lived at a real time and place in history.",
+    why: "The faith rests on real events: \u201csuffered under Pontius Pilate.\u201d", refs: "Luke 3:1\u20132; 1 Cor. 15:3\u20138" },
+  { id: 21, a: 4, tier: 1, key: "D", text: "Jesus did not actually die on the cross; someone else died, or He only fainted.",
+    why: "Jesus truly died. A substitute, a swoon, or an illusion denies the gospel.", refs: "Mark 15:37\u201345; John 19:33\u201335" },
+  { id: 22, a: 4, tier: 1, key: "A", text: "Jesus died in our place, for our sins.",
+    why: "That Christ died for our sins is essential. The best way to explain how the atonement works is debated (Tier 2).", refs: "Isa. 53:5\u20136; 1 Cor. 15:3; 1 Pet. 3:18" },
+  { id: 23, a: 4, tier: 1, key: "D", text: "Christ's sacrifice must be repeated or added to for our sins to be forgiven.",
+    why: "His sacrifice was complete, once for all.", refs: "Heb. 9:26; Heb. 10:10\u201314" },
+  { id: 24, a: 4, tier: 3, key: null, text: "After His death, Jesus went to the realm of the dead, as \u201cHe descended into hell\u201d says.",
+    lean: ["Another reading, or omit the phrase", "A descent to the realm of the dead"],
+    why: "Open. Christians read this line several ways, and some churches omit it.", refs: "Eph. 4:9; 1 Pet. 3:18\u201320" },
+
+  // Article 5
+  { id: 25, a: 5, tier: 1, key: "A", text: "Jesus rose physically from the dead, leaving an empty tomb.",
+    why: "A spirit-only or symbolic resurrection crosses the line.", refs: "Luke 24:39; John 20:27; 1 Cor. 15:4" },
+  { id: 26, a: 5, tier: 1, key: "D", text: "A person can deny the resurrection and still be a Christian.",
+    why: "\u201cIf Christ has not been raised, your faith is futile.\u201d", refs: "Rom. 10:9; 1 Cor. 15:14\u201317" },
+  { id: 27, a: 5, tier: 4, key: null, text: "The Gospel accounts of the resurrection appearances fit together into one clear sequence.",
+    lean: ["The accounts emphasize different details", "One harmonized sequence"],
+    why: "Open. A matter of careful study.", refs: "Matt. 28; Luke 24; John 20\u201321" },
+
+  // Article 6
+  { id: 28, a: 6, tier: 1, key: "A", text: "Jesus is still fully human today, as well as fully God.",
+    why: "\u201cThe man Christ Jesus\u201d is our Mediator now.", refs: "Acts 1:11; 1 Tim. 2:5" },
+  { id: 29, a: 6, tier: 1, key: "D", text: "We need someone besides Jesus, such as a saint, an angel, or a modern prophet, to reach God.",
+    why: "Christ is the one Mediator between God and humanity.", refs: "1 Tim. 2:5; Heb. 7:25" },
+  { id: 30, a: 6, tier: 2, key: null, text: "Christ's body and blood are truly present in the bread and wine of the Lord's Supper.",
+    lean: ["Spiritual or symbolic presence", "Real presence"],
+    why: "Debated among Lutherans, Reformed, Baptists, and others.", refs: "Matt. 26:26\u201328; 1 Cor. 11:23\u201326" },
+
+  // Article 7
+  { id: 31, a: 7, tier: 1, key: "A", text: "Jesus will return personally, bodily, and visibly.",
+    why: "\u201cThis same Jesus\u2026 will come in the same way as you saw Him go.\u201d", refs: "Acts 1:11; Rev. 1:7" },
+  { id: 32, a: 7, tier: 1, key: "D", text: "The Second Coming has already happened, either in AD 70 or invisibly in 1914.",
+    why: "A completed, invisible, or past return crosses the line.", refs: "Matt. 24:27, 30; 2 Tim. 2:17\u201318" },
+  { id: 33, a: 7, tier: 3, key: null, text: "Believers will be raptured before a future period of tribulation.",
+    lean: ["Another end-times view", "Pre-tribulation rapture"],
+    why: "Open. Faithful Christians differ on the timeline of the end.", refs: "Matt. 24:29\u201331; 1 Thess. 4:16\u201317" },
+  { id: 34, a: 7, tier: 3, key: "A", text: "No one can know the date of Christ's return.",
+    why: "Scripture says no one knows the day or hour. Date-setting is an error, though not by itself a denial of the faith.", refs: "Matt. 24:36; Acts 1:7" },
+
+  // Article 8
+  { id: 35, a: 8, tier: 1, key: "D", text: "The Holy Spirit is an impersonal force, not a Person.",
+    why: "The Spirit is a Person who speaks, teaches, and can be grieved.", refs: "John 14:26; Acts 13:2; Eph. 4:30" },
+  { id: 36, a: 8, tier: 1, key: "A", text: "The Holy Spirit is fully God.",
+    why: "Lying to the Spirit is lying to God.", refs: "Acts 5:3\u20134; 1 Cor. 3:16" },
+  { id: 37, a: 8, tier: 1, key: "D", text: "A person can be a true Christian without having the Holy Spirit.",
+    why: "Anyone who does not have the Spirit of Christ does not belong to Him.", refs: "Rom. 8:9; 1 Cor. 12:13" },
+  { id: 38, a: 8, tier: 1, key: "A", text: "The Bible is inspired by God and is the final authority; no later book or prophet is equal to it.",
+    why: "Scripture is God-breathed and the final authority. No later revelation stands equal to it.", refs: "2 Tim. 3:16; 2 Pet. 1:21; Jude 3" },
+  { id: 39, a: 8, tier: 2, key: null, text: "Gifts such as tongues, prophecy, and healing continue in the church today.",
+    lean: ["Cessationist", "Continuationist"],
+    why: "Debated, and often a reason for separate churches.", refs: "1 Cor. 12\u201314; Eph. 2:20" },
+  { id: 40, a: 8, tier: 4, key: null, text: "One English Bible translation is clearly better than all the others.",
+    lean: ["Several faithful translations", "One preferred translation"],
+    why: "Preference. Use a faithful translation you will read.", refs: "Ps. 119:105" },
+
+  // Article 9
+  { id: 41, a: 9, tier: 4, key: "D", text: "In the Apostles' Creed, \u201ccatholic church\u201d means the Roman Catholic Church.",
+    why: "In the creed, \u201ccatholic\u201d means universal: all true believers everywhere.", refs: "Eph. 4:4\u20136; Rev. 7:9" },
+  { id: 42, a: 9, tier: 1, key: "D", text: "Only one organization is the true church, and no one outside it can be saved.",
+    why: "The church is all who belong to Christ. A group claiming to be the only true church is a hallmark of movements outside the faith.", refs: "1 Cor. 12:12\u201313; Eph. 4:4\u20136" },
+  { id: 43, a: 9, tier: 2, key: null, text: "Infants of believers should be baptized.",
+    lean: ["Believer's baptism", "Infant baptism"],
+    why: "Debated, and one of the main reasons denominations exist.", refs: "Acts 2:38\u201339; Acts 16:33; Col. 2:11\u201312" },
+  { id: 44, a: 9, tier: 2, key: null, text: "Women may serve as senior pastors.",
+    lean: ["Complementarian", "Egalitarian"],
+    why: "Debated among faithful churches.", refs: "1 Tim. 2:12; Gal. 3:28; Rom. 16:1\u20137" },
+  { id: 45, a: 9, tier: 4, key: null, text: "Traditional hymns are better for worship than contemporary songs.",
+    lean: ["Open to contemporary songs", "Prefers hymns"],
+    why: "Preference.", refs: "Col. 3:16; Ps. 96:1" },
+
+  // Article 10
+  { id: 46, a: 10, tier: 1, key: "D", text: "A person can earn forgiveness through good works or religious rituals.",
+    why: "Salvation is by grace through faith, not by works.", refs: "Eph. 2:8\u20139; Titus 3:5" },
+  { id: 47, a: 10, tier: 1, key: "A", text: "Forgiveness is received through faith in Jesus Christ.",
+    why: "Everyone who believes in Him receives forgiveness of sins through His name.", refs: "Acts 10:43; Rom. 3:22\u201326" },
+  { id: 48, a: 10, tier: 1, key: "D", text: "Since we are saved by grace, good works do not really matter.",
+    why: "Good works matter as the fruit and evidence of faith, not its cause.", refs: "Eph. 2:10; James 2:17" },
+  { id: 49, a: 10, tier: 2, key: null, text: "Baptism is the moment God forgives sins and gives new life.",
+    lean: ["Baptism as a sign of salvation", "Baptism as the means of new life"],
+    why: "Debated among faithful churches (Lutherans and Churches of Christ vs. Baptists, for example).", refs: "Acts 2:38; Rom. 6:3\u20134; 1 Pet. 3:21" },
+  { id: 50, a: 10, tier: 2, key: null, text: "God chooses who will believe, rather than leaving the final choice to us.",
+    lean: ["Arminian", "Calvinist"],
+    why: "Debated (Calvinism vs. Arminianism).", refs: "John 6:44; Eph. 1:4\u20135; 2 Pet. 3:9" },
+  { id: 51, a: 10, tier: 3, key: null, text: "A true believer can lose salvation.",
+    lean: ["Eternal security", "Salvation can be lost"],
+    why: "Debated.", refs: "John 10:28\u201329; Heb. 6:4\u20136" },
+
+  // Article 11
+  { id: 52, a: 11, tier: 1, key: "A", text: "The dead will be raised with real, physical bodies.",
+    why: "God redeems the body; He does not discard it.", refs: "1 Cor. 15:42\u201344; Phil. 3:21" },
+  { id: 53, a: 11, tier: 1, key: "D", text: "People may be reincarnated into another life after they die.",
+    why: "People die once, and after that comes judgment.", refs: "Heb. 9:27" },
+  { id: 54, a: 11, tier: 1, key: "A", text: "Everyone will be raised: some to eternal life and some to judgment.",
+    why: "All the dead will be raised, some to life and some to judgment.", refs: "Dan. 12:2; John 5:28\u201329" },
+  { id: 55, a: 11, tier: 3, key: null, text: "At death, believers go consciously to be with the Lord.",
+    lean: ["\u201cSoul sleep\u201d until the resurrection", "Conscious presence with Christ"],
+    why: "Debated.", refs: "Luke 23:43; 2 Cor. 5:8; Phil. 1:23" },
+
+  // Article 12
+  { id: 56, a: 12, tier: 1, key: "D", text: "Faithful people can progress to become gods.",
+    why: "Eternal life is a gift. Humans never become gods.", refs: "Isa. 43:10; Isa. 44:6" },
+  { id: 57, a: 12, tier: 1, key: "D", text: "Everyone will be saved in the end, whether or not they trust in Christ.",
+    why: "This view falls outside historic Christian teaching.", refs: "Matt. 25:46; John 3:36" },
+  { id: 58, a: 12, tier: 3, key: null, text: "Hell is eternal, conscious punishment.",
+    lean: ["Final destruction (annihilationism)", "Eternal conscious punishment"],
+    why: "Debated among evangelicals; John Stott, for example, held the view of final destruction.", refs: "Matt. 25:46; 2 Thess. 1:9; Rev. 14:11" },
+  { id: 59, a: 12, tier: 2, key: null, text: "There is a purgatory where believers are purified after death.",
+    lean: ["No purgatory (Protestant)", "Purgatory (Catholic)"],
+    why: "Protestants reject it. A Protestant-Catholic dividing line.", refs: "Phil. 1:23; Heb. 9:27" }
+];
